@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+body{
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+.body{
+    display: grid;
+    background-color: rgb(221, 188, 34, .3);
+    color: #4b4d53;
+    row-gap: .5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 15rem 80% 5%;
+    grid-template-areas: 
+    'h h'
+    'm m'
+    'f f';
+}
+.header{
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFF;
+    grid-area: h;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header section{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header .profile{
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 1rem 1rem rgb(221, 34, 160, .5);
+}
+.header h1{
+    margin-top: -1rem;
+}
+.header nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+.header li{
+    color: #FFFF;
+    list-style: none;
+    text-decoration: none;
+}
+.header a{
+    color: #FFFF;
+    padding: .5rem .5rem;
+    text-decoration: none;
+}
+.header a:hover{
+    background-color: rgb(221, 34, 160, .5);
+    border-radius: .5rem;
+}
+.mainContainer{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: m;
+    grid-template-areas: 
+    'a a a'
+    's s s'
+    'ex ex ex'
+    'e e c';
+    padding: 0 1rem;
+}
+.about, .skills, .education, .experienceContainer, .contact{
+    border-radius: .5rem;
+    box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .15);
+    padding: .2rem .5rem;
+}
+.about{
+    grid-area: a;
+}
+.skills{
+    grid-area: s;
+}
+.experienceContainer{
+    display: grid;
+    gap: 1rem;
+    grid-area: ex;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'pe we';
+}
+.professionalExp{
+    grid-area: pe;
+}
+.workExp{
+    grid-area: we;
+}
+.education{
+    grid-area: e;
+}
+.item{
+    background-color: rgb(221, 34, 160, .3);
+    border-radius: .5rem;
+    box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .4);
+    padding: .3rem .5rem;
+}
+.btn{
+    background-color: rgb(221, 188, 34, .8);
+    border-radius: .5rem;
+    border: none;
+    box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .4);
+    color: #FFFF;
+    cursor: pointer;
+    height: 2rem;
+    width: 12rem;
+}
+.btn:hover{
+    background-color: transparent;
+    border: .15rem solid rgb(221, 188, 34,.8);
+    box-shadow: none;
+    color: #4b4d53;
+}
+.contact{
+    grid-area: c;
+}
+.hide{
+    display: none;
+}
+.footer{
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFF;
+    grid-area: f;
+    line-height: 100%;
+    text-align: center;
+}
+
