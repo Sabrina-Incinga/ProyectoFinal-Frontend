@@ -8,11 +8,11 @@ body{
 
 .body{
     display: grid;
-    background-color: rgb(221, 188, 34, .3);
+    background-color: rgb(221, 188, 34, .2);
     color: #4b4d53;
     row-gap: .5rem;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 15rem 80% 5%;
+    grid-template-rows: 15rem 100% 3.5rem;
     grid-template-areas: 
     'h h'
     'm m'
@@ -25,7 +25,7 @@ body{
     color: #FFFF;
     grid-area: h;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .header section{
     align-items: center;
@@ -58,6 +58,9 @@ body{
     background-color: rgb(221, 34, 160, .5);
     border-radius: .5rem;
 }
+.header .menu{
+    display: none;
+}
 .mainContainer{
     display: grid;
     gap: 1rem;
@@ -74,6 +77,9 @@ body{
     border-radius: .5rem;
     box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .15);
     padding: .2rem .5rem;
+}
+.about:hover, .skills:hover, .contact:hover{
+    background-color: rgb(221, 188, 34, .2);
 }
 .about{
     grid-area: a;
@@ -94,6 +100,9 @@ body{
 .workExp{
     grid-area: we;
 }
+.professionalExp article, .workExp article, .education article{
+    margin: 1rem 0;
+}
 .education{
     grid-area: e;
 }
@@ -103,7 +112,10 @@ body{
     box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .4);
     padding: .3rem .5rem;
 }
-.btn{
+.item:hover{
+    background-color: rgb(221, 34, 160, .5);
+}
+.btn, .contactBtn{
     background-color: rgb(221, 188, 34, .8);
     border-radius: .5rem;
     border: none;
@@ -113,17 +125,36 @@ body{
     height: 2rem;
     width: 12rem;
 }
-.btn:hover{
+.contact .contactBtn{
+    background-color: rgb(221, 34, 160, .5);
+    height: 3rem;
+    font-weight: 700;
+    width: 15rem;
+}
+.contact .contactBtn:hover{
+    border: .15rem solid rgb(221, 34, 160, .5);
+}
+.btn:hover, .contactBtn:hover{
     background-color: transparent;
     border: .15rem solid rgb(221, 188, 34,.8);
     box-shadow: none;
     color: #4b4d53;
 }
 .contact{
+    align-items: center;
+    display: flex;
     grid-area: c;
+    justify-content: center;
 }
 .hide{
     display: none;
+    animation: show 1s linear;
+    opacity: 0;
+}
+.show{
+    display: block;
+    animation: show 1s linear;
+    opacity: 1;
 }
 .footer{
     background-repeat: no-repeat;
@@ -134,3 +165,68 @@ body{
     text-align: center;
 }
 
+@keyframes show {
+    from{
+        display: none;
+        opacity: 0;
+    }
+    to{
+        display: block;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:645px) {
+    .header{
+        position: relative;
+    }
+    .header nav{
+        align-self: center;
+    }
+    .header nav ul{
+        background-color: rgb(221, 188, 34, .7);
+        border-radius: .5rem;
+        box-shadow: 0 0 .4rem .1rem rgb(75, 77, 83, .4);
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .header .menu{
+        display: block;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .header nav:hover ul{
+        display: block;
+    }
+
+    .header a:hover{
+        background-color: transparent;
+        color: rgb(221, 34, 160, .5);
+    }
+
+    .mainContainer{
+        grid-template-areas: 
+        'a a a'
+        's s s'
+        'ex ex ex'
+        'e e e'
+        'c c c';
+    }
+    .experienceContainer{
+        grid-template-areas: 'pe pe'
+        'we we';
+    }
+    .btn, .contact .contactBtn{
+        width: 80%;
+    }
+
+    .contact #contactDetails{
+        width: 100%;
+    }
+    .contact #contactDetails li{
+        width: 100%;
+    }
+}
